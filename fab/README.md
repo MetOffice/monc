@@ -2,7 +2,7 @@
 
 This directory contains the files for building MONC with Fab.
 
-You need Fab version 2.2.0 (or later).
+You need Fab version 2.3.0 (or later).
 
 ## Building
 The build script is a Python script that relies on Fab.
