@@ -1,0 +1,81 @@
+#!Jinja2
+
+# ====================================================================
+# IMPORT CASE SPECIFICATION
+# ====================================================================
+
+{% import "CASE_FILE.jinja2" as CASE %}
+
+# ====================================================================
+# CYLC WORKFLOW
+# ====================================================================
+
+[scheduler]
+    UTC mode = True
+
+[scheduling]
+
+    cycling mode = integer
+
+    initial cycle point = 1
+
+    final cycle point = {{ CASE.MAX_CONTINUATION_RUNS }}
+
+    [[graph]]
+
+        P1 = """
+            monc => check
+            check[-P1]:continue_run => monc
+        """
+
+[runtime]
+
+    [[root]]
+
+        [[[environment]]]
+
+            MONC_ROOT={{ CASE.MONC_ROOT }}
+
+            MONC_EXEC={{ CASE.MONC_EXEC }}
+
+            TESTCASE={{ CASE.TESTCASE }}
+
+            STDOUT_DIR={{ CASE.STDOUT_DIR }}
+
+            CP_DIR={{ CASE.CP_DIR }}
+
+            RUN_NAME={{ CASE.RUN_NAME }}
+
+            MAX_CONTINUATION_RUNS={{ CASE.MAX_CONTINUATION_RUNS }}
+
+    [[monc]]
+
+        platform = ex
+
+        script = "${CYLC_WORKFLOW_RUN_DIR}/bin/monc_cycle.sh"
+
+        [[[directives]]]
+
+            -N = {{ CASE.JOB_NAME }}
+
+            -q = {{ CASE.PBS_QUEUE }}
+
+            -P = {{ CASE.PBS_PROJECT }}
+
+            -j = oe
+
+            -l select={{ CASE.PBS_SELECT }}
+
+            -l walltime={{ CASE.PBS_WALLTIME }}
+
+    [[check]]
+
+        platform = ex-bg
+
+        script = "${CYLC_WORKFLOW_RUN_DIR}/bin/continuation_check.sh"
+
+        [[[outputs]]]
+
+            continue_run = "CONTINUE"
+
+            stop_run = "STOP"
