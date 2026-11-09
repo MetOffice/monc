@@ -61,7 +61,7 @@ diagnostic_file="diagnostic_files/diagnostics_FOG_ts.nc"
 checkpoint_frequency=0
 checkpoint_file="checkpoint_files/fog_dump.nc"
 check_walltime_frequency=10000
-walltime_limit=04:00:00
+walltime_limit=00:05:00
 
 # Advection choices
 advection_flow_fields=pw
