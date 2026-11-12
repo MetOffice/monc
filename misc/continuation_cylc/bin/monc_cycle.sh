@@ -1,6 +1,6 @@
 #!/bin/bash
 # Some content in this file was generated or refactored with assistance from
-# - University of Reading Microsoft Copilot (OpenAI CPT-5.6 SoI); PR #7.
+# - University of Reading Microsoft Copilot (OpenAI GPT-5.6 SoI); PR #9.
 
 cd "$MONC_ROOT"
 
