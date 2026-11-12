@@ -1,10 +1,16 @@
 #!/bin/bash
+# Some content in this file was generated or refactored with assistance from
+# - University of Reading Microsoft Copilot (OpenAI CPT-5.6 SoI); PR #7.
 
 cd "$MONC_ROOT"
 
 echo "Running from $(pwd)"
 
-set -euo pipefail
+set -euo pipefail # fail loudly:
+# -e:          exit on error;
+# -u:          undefined variables are errors;
+# -o pipefail: pipeline status is nonzero if ANY command in pipeline fails,
+#              not just the last command
 
 ulimit -c unlimited
 
@@ -142,7 +148,7 @@ echo "PBS_NODEFILE lines=$(wc -l < "$PBS_NODEFILE")" >> "$outputfn"
 # Run MONC
 #
 
-set +e
+set +e # do not exit on error
 
 # Cold start
 
@@ -191,7 +197,7 @@ fi
 
 status=$?
 
-set -e
+set -e # return to exiting on errors
 
 if [ "$status" -ne 0 ]
 then

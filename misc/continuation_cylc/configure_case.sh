@@ -1,6 +1,12 @@
 #!/bin/bash
+# Some content in this file was generated or refactored with assistance from
+# - University of Reading Microsoft Copilot (OpenAI CPT-5.6 SoI); PR #7.
 
-set -euo pipefail
+set -euo pipefail # fail loudly:
+# -e:          exit on error;
+# -u:          undefined variables are errors;
+# -o pipefail: pipeline status is nonzero if ANY command in pipeline fails,
+#              not just the last command
 
 CASE_FILE="$1"
 
