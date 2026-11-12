@@ -1,0 +1,5 @@
+module switch PrgEnv-cray PrgEnv-cray/8.4.0
+module load cpe/23.05
+module switch cce cce/15.0.0
+module load cray-hdf5-parallel
+module load cray-netcdf-hdf5parallel

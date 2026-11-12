@@ -1,0 +1,39 @@
+# ====================================================================
+# CYLC CONFIG
+# ====================================================================
+
+{% set WORKFLOW_NAME = "monc_example" %}
+
+
+# ====================================================================
+# PBS CONFIG
+# ====================================================================
+
+{% set JOB_NAME = WORKFLOW_NAME %}
+
+{% set PBS_QUEUE = "collab" %}
+
+{% set PBS_PROJECT = "parachute" %}
+
+{% set PBS_SELECT = "1:coretype=milan:ncpus=128:mpiprocs=128" %}
+
+{% set PBS_WALLTIME = "00:10:00" %}
+
+
+# ====================================================================
+# MONC CONFIG
+# ====================================================================
+
+{% set MONC_ROOT = "/projects/parachute/daniel.shipley.ext/monc/monc" %}
+
+{% set MONC_EXEC = "./build/bin/monc_driver.exe" %}
+
+{% set TESTCASE = "./testcases/stable/Fog_Porson2011.mcf" %}
+
+{% set STDOUT_DIR = "./monc_stdout" %}
+
+{% set CP_DIR = "./checkpoint_files" %}
+
+{% set RUN_NAME = "fog_dump" %}
+
+{% set MAX_CONTINUATION_RUNS = 3 %}
