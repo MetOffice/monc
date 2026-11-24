@@ -15,7 +15,7 @@ set -euo pipefail # fail loudly:
 
 cd "$MONC_ROOT"
 
-cycle="${CYLC_TASK_CYCLE_POINT:-${CYLC_CYCLE_POINT:-1}}"
+cycle="${CYLC_TASK_CYCLE_POINT:-1}"
 
 echo "cycle=$cycle"
 echo "STDOUT_DIR=$STDOUT_DIR"
