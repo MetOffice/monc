@@ -1,4 +1,9 @@
 #!/bin/bash
+# -----------------------------------------------------------------------------
+# (C) Crown copyright Met Office. All rights reserved.
+# The file LICENCE, distributed with this code, contains details of the terms
+# under which the code may be used.
+# -----------------------------------------------------------------------------
 # Some content in this file was generated or refactored with assistance from
 # - University of Reading Microsoft Copilot (OpenAI GPT-5.6 SoI); PR #9.
 
