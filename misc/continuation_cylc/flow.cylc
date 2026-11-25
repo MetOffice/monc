@@ -41,7 +41,7 @@
 
         [[[environment]]]
 
-            MONC_ROOT={{ CASE.MONC_ROOT }}
+	    MONC_ROOT={{ CYLC_WORKFLOW_SRC_DIR }}/../..
 
             MONC_EXEC={{ CASE.MONC_EXEC }}
 
