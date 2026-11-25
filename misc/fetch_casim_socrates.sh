@@ -215,6 +215,25 @@ if [[ -n "${SOCRATES_REF}" ]]; then
 fi
 
 ###############################################################################
+# Write environment file for fcm-make
+###############################################################################
+
+ENV_FILE="${DEPS_DIR}/.casim_socrates.env"
+mkdir -p "$(dirname "${ENV_FILE}")"
+
+cat > "${ENV_FILE}" << ENVEOF
+export CASIM_GIT_DIR="${CASIM_DIR}"
+export SOCRATES_GIT_DIR="${SOCRATES_DIR}"
+export MONC_GIT_DEPS_DIR="${DEPS_DIR}"
+ENVEOF
+
+echo
+echo "Environment variables written to: ${ENV_FILE}"
+echo "Source it before running fcm-make:"
+echo "  source ${ENV_FILE}"
+echo "  fcm make -f fcm-make/casim_socrates_GIT_TEST.cfg"
+
+###############################################################################
 # Summary
 ###############################################################################
 
