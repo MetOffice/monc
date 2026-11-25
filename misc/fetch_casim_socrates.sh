@@ -5,7 +5,7 @@
 # under which the code may be used.
 # -----------------------------------------------------------------------------
 # Some content in this file was generated or refactored with assistance from
-# - University of Reading Microsoft Copilot (OpenAI GPT-5.6 SoI); PR #11.
+# - University of Reading Microsoft Copilot (OpenAI GPT-5.6 SoI); PR #12.
 
 set -euo pipefail # fail loudly:
 # -e:          exit on error;
