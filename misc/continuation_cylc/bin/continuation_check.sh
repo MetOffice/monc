@@ -1,10 +1,21 @@
 #!/bin/bash
+# -----------------------------------------------------------------------------
+# (C) Crown copyright Met Office. All rights reserved.
+# The file LICENCE, distributed with this code, contains details of the terms
+# under which the code may be used.
+# -----------------------------------------------------------------------------
+# Some content in this file was generated or refactored with assistance from
+# - University of Reading Microsoft Copilot (OpenAI GPT-5.6 SoI); PR #9.
 
-set -euo pipefail
+set -euo pipefail # fail loudly:
+# -e:          exit on error;
+# -u:          undefined variables are errors;
+# -o pipefail: pipeline status is nonzero if ANY command in pipeline fails,
+#              not just the last command
 
 cd "$MONC_ROOT"
 
-cycle="${CYLC_TASK_CYCLE_POINT:-${CYLC_CYCLE_POINT:-1}}"
+cycle="${CYLC_TASK_CYCLE_POINT:-1}"
 
 echo "cycle=$cycle"
 echo "STDOUT_DIR=$STDOUT_DIR"
